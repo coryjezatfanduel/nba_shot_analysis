@@ -1,5 +1,3 @@
-# Identiying over- and under-valued NBA players using Machine Learning
-
 ## Goals of this Analysis
 As I'm putting this together on the eve of the NBA 2017 season tipoff, my goal is to use Machine Learning to create a metric to better understand the offensive efficiency of NBA players - specifically related to their shot selection. Traditional metrics that we read in the box score are often result-based, counting metrics. While these metrics are easy to track, they often do a poor job of crediting the "inputs" of a given "outcome" during a play. 
 
