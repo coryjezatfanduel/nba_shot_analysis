@@ -36,7 +36,19 @@ The 5 most important features of our model are:
 # Initial Analysis
 Now that we have a solid model to determine shot probabilities, we can do a lot of analysis on understanding player performance based on the input - how likely they were to make a given shot, as opposed to the result - the number of shots they made (which are inevitably a function of statistical variance, often seen as slumps or hot streaks).
 
-The first thing we will do in looking at the 2017 data, is create a metric for each players' Actual Value and Expected Value per shot. Actual value per shot can be calculated as: `(((2P FG%)*2)*(2P FGA / (2P FGA + 3P FGA)) + ((3P FG%)*3) * (3P FGA / (2P FGA + 3P FG)))`
+The first thing we will do in looking at the 2017 data, is create a metric for each players' Actual Value and Expected Value per shot. Actual value per shot can be calculated as: `((2P FG%*2)*(2P FGA / (2P FGA + 3P FGA)) + ((3P FG%*3) * (3P FGA / (2P FGA + 3P FG))`
+
+That's a lot to chew on, but all we're essentially ssaying is 2P FGs valued at 2, 3P FGs valued at 3, weighted by the players' 2P vs. 3P FGA distribution. So now we have every players' ACTUAL VALUE of taking a shot in 2016. Not surprisingly, here are our top 5 players in 2016 Actual Value per Shot (AV): 
+
+TOP 5 PLAYERS 
+
+And of course, we can't examine the top 5 without examining the bottom 5: 
+
+BOTTOM 5 PLAYERS 
+
+However, this AV metric measures the result of the shot. When players take bad shots and make them, they're rewarded on the box score the exact same as a player taking a great shot. What we can now do with our model's shot probabilities is "grade" each shot, and then give each player a parallel metric of Expected Value per shot. This will allow us to tease out players taking bad shots and getting lucky, or perhaps players in an unsustainable "hot streak." Similarly, we can see players who are in a slump, allowing them to see that they are taking good shots, reinforcing positive decisions on the floor - even if those decisions are not reflected in a box score.
+
+Our EV formula is similar to our AV formula: `((2P Prob % *2)*(2P FGA / (2P FGA + 3P FGA)) + ((3P Prob % * 3)*(3P FGA / (2P FGA + 3P FGA))`
 
 
 
