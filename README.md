@@ -15,4 +15,9 @@ The data used for this analysis is available at nbasavant.com. It contains infor
 The key to this analysis is coming up with an accurate probability of each shot being made. This is the crux of our EvDelta metric. In choosing a model to run this classification problem, we need a model that 1) will handle several variables that are correlated, 2) show us which features (variables) are most important to the model and 3) will not be prone to over-fitting this data (since we will use it to predict future performance it must translate to unseen data). For these reasons, we've chosen to use the Random Forest algorithm, which has many of these advantages, and yet is still relatively straightforward to implement. 
 
 ## Model Performance
-In order to ensure our model is accurate, we can look at two figures, accuracy and AUC. 
+In order to ensure our model is accurate, we will choose the "best" model based on logloss. Luckily for us, with a few lines of python, we can test several different models using an approach called GridSearch CV (searching many of the parameters for model like the RF):
+``` python
+param_grid = dict(max_depth=max_depth_range, min_samples_leaf=leaf_range,n_estimators=n_estimators_range)
+grid = RandomizedSearchCV(rf_grid, param_grid, cv=10, scoring='neg_log_loss')
+grid.fit(X_train, y_train)
+```
