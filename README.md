@@ -36,7 +36,7 @@ The 5 most important features of our model are:
 # Initial Analysis
 Now that we have a solid model to determine shot probabilities, we can do a lot of analysis on understanding player performance based on the input - how likely they were to make a given shot, as opposed to the result - the number of shots they made (which are inevitably a function of statistical variance, often seen as slumps or hot streaks).
 
-The first thing we will do in looking at the 2017 data, is create a metric for each players' Actual Value and Expected Value per shot. Actual value per shot can be calculated as: `(((2P FGM /2P FGA)*2)*(2P FGA / (2P FGA + 3P FGA)) + ((3P FGM / 3P FGA)*3) * (3P FGA / (2P FGA + 3P FG)))`
+The first thing we will do in looking at the 2017 data, is create a metric for each players' Actual Value and Expected Value per shot. Actual value per shot can be calculated as: `(((2P FG%)*2)*(2P FGA / (2P FGA + 3P FGA)) + ((3P FG%)*3) * (3P FGA / (2P FGA + 3P FG)))`
 
 
 
